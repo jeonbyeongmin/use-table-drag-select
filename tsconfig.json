@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "ESNext", "ESNext.AsyncIterable"],
+    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "inlineSources": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "allowJs": false,
+    "skipLibCheck": true
+  },
+  "exclude": ["**/dist/*", "**/esm/*", "**/__testfixtures__/*"]
+}
