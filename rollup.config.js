@@ -1,4 +1,4 @@
-const { generateRollupConfig } = require('@toss/rollup-config');
+const { generateRollupConfig } = require('./configs/rollup');
 
 module.exports = generateRollupConfig({
   packageDir: __dirname,
