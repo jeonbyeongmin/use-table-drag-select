@@ -94,8 +94,6 @@ export function useTableDragSelect(initialTable?: boolean[][]): [React.RefObject
   useEffect(() => {
     const node = tableRef.current?.querySelector('tbody') ?? tableRef.current;
 
-    setTableValue(initialTable ?? []);
-
     if (!initialTable && node) {
       const trs = node.querySelectorAll('tr');
       const newTableValues: boolean[][] = [];
