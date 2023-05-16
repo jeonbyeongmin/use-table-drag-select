@@ -1,0 +1,127 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 1.6em;
+  overflow-x: auto;
+  border-radius: 0.4em;
+  background-color: #131313;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 3;
+}
+
+.timetable {
+  border-spacing: 6px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.6em;
+  border-radius: 0.4em;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+}
+
+.timetable tbody tr td {
+  background-color: #131313;
+  border-radius: 5px;
+  min-width: none;
+}
+
+.timetable th {
+  cursor: default;
+}
+
+.timetable th,
+.timetable td {
+  padding: 1.2em 1.6em;
+  text-align: left;
+  min-width: 30px;
+}
+
+.timetable .selected {
+  background-color: #646cff;
+  color: #ffffff;
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  margin-bottom: 1.6em;
+  border-radius: 0.4em;
+}
+
+.view td {
+  min-width: 4em;
+}
+
+.description {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+
+  .timetable tbody tr td {
+    background-color: #f3f3f3;
+  }
+
+  .selected {
+    background-color: #646cff;
+  }
+
+  pre {
+    background-color: #f3f3f3;
+    color: #213547;
+  }
+}
