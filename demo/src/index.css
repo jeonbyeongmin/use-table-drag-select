@@ -55,6 +55,7 @@ h1 {
   border-radius: 0.4em;
   overflow: hidden;
   user-select: none;
+  -webkit-user-select: none;
   cursor: pointer;
 }
 
