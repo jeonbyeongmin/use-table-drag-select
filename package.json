@@ -32,7 +32,8 @@
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "prepack": "yarn build",
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@types/react": "^18.2.6"

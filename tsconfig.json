@@ -25,5 +25,5 @@
     "allowJs": false,
     "skipLibCheck": true
   },
-  "exclude": ["**/dist/*", "**/esm/*", "**/__testfixtures__/*", "**/demo/*"]
+  "exclude": ["**/dist/*", "**/esm/*", "**/__testfixtures__/*", "**/demo/*", "**/docs/*"]
 }

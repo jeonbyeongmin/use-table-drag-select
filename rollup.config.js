@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const babel = require('@rollup/plugin-babel').default;
 const commonjs = require('@rollup/plugin-commonjs');
 const json = require('@rollup/plugin-json');

@@ -21,7 +21,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks', '@emotion'],
+  plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks'],
   settings: { 'import/resolver': { typescript: {} }, react: { version: 'detect' } },
   rules: {
     'no-implicit-coercion': 'error',
@@ -34,8 +34,6 @@ module.exports = {
     ],
     curly: ['error', 'all'],
     eqeqeq: ['error', 'always', { null: 'ignore' }],
-
-    '@emotion/pkg-renaming': 'error',
 
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
