@@ -1,7 +1,7 @@
 {
   "name": "use-table-drag-select",
   "version": "0.1.0",
-  "description": "A React hook for selecting table cells by dragging the pointer",
+  "description": "A React hook for selecting table cells by dragging",
   "keywords": [
     "react",
     "timetable",
@@ -10,6 +10,11 @@
     "component",
     "select"
   ],
+  "homepage": "https://jeonbyeongmin.github.io/use-table-drag-select/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeonbyeongmin/use-table-drag-select"
+  },
   "license": "MIT",
   "author": {
     "name": "Byeongmin Jeon",
@@ -17,17 +22,11 @@
     "url": "https://github.com/jeonbyeongmin"
   },
   "sideEffects": false,
-  "exports": {
-    ".": {
-      "require": "./src/index.ts",
-      "import": "./src/index.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "main": "./src/index.ts",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "esm"
+    "dist"
   ],
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.build.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
@@ -68,25 +67,5 @@
   },
   "peerDependencies": {
     "react": "^16.8 || ^17 || ^18"
-  },
-  "publishConfig": {
-    "access": "public",
-    "exports": {
-      ".": {
-        "require": "./dist/index.js",
-        "import": "./esm/index.mjs",
-        "types": "./dist/index.d.ts"
-      },
-      "./package.json": "./package.json"
-    },
-    "import": "./esm/index.mjs",
-    "main": "./dist/index.js",
-    "module": "./esm/index.mjs",
-    "types": "./dist/index.d.ts"
-  },
-  "homepage": "https://github.com/jeonbyeongmin/use-table-drag-select",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeonbyeongmin/use-table-drag-select"
   }
 }
