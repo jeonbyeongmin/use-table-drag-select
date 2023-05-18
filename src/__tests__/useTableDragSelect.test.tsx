@@ -27,79 +27,116 @@ describe('useTableDragSelect', () => {
     expect(result.current[1]).toEqual(initialValue);
   });
 
-  describe('DOM과 연결 테스트', () => {
-    it('intialValue가 없다면 tbody을 기준으로 value를 초기화해야 한다.', async () => {
-      let value: boolean[][] = [];
+  it('intialValue가 없다면 tbody을 기준으로 value를 초기화해야 한다.', async () => {
+    let value: boolean[][] = [];
 
-      const TestComponent = () => {
-        const [tableRef, tableValue] = useTableDragSelect();
-        return (
-          <div>
-            <table ref={tableRef}>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th></th>
-                  <td>1</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td>1</td>
-                  <td>2</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th></th>
-                  <td>1</td>
-                  <td>2</td>
-                </tr>
-              </tfoot>
-            </table>
-
-            <button
-              onClick={() => {
-                value = tableValue;
-              }}
-            >
-              value 저장
-            </button>
-          </div>
-        );
-      };
-
-      render(<TestComponent />);
-
-      await userEvent.click(await screen.findByRole('button', { name: 'value 저장' }));
-
-      expect(value).toEqual([
-        [false, false],
-        [false, false],
-      ]);
-    });
-
-    it('tbody가 없다면 에러를 발생시켜야 한다.', () => {
-      const TestComponent = () => {
-        const [tableRef] = useTableDragSelect();
-        return (
-          <div>
-            <table ref={tableRef}>
+    const TestComponent = () => {
+      const [tableRef, tableValue] = useTableDragSelect();
+      return (
+        <div>
+          <table ref={tableRef}>
+            <thead>
               <tr>
-                <td></td>
+                <th></th>
+                <th></th>
+                <th></th>
               </tr>
-            </table>
-          </div>
-        );
-      };
+            </thead>
+            <tbody>
+              <tr>
+                <th></th>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <th></th>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </tfoot>
+          </table>
 
-      expect(() => render(<TestComponent />)).toThrowError();
-    });
+          <button
+            onClick={() => {
+              value = tableValue;
+            }}
+          >
+            value 저장
+          </button>
+        </div>
+      );
+    };
+
+    render(<TestComponent />);
+
+    await userEvent.click(await screen.findByRole('button', { name: 'value 저장' }));
+
+    expect(value).toEqual([
+      [false, false],
+      [false, false],
+    ]);
+  });
+
+  it('initialValue가 있다면 initialValue를 기준으로 value를 초기화해야 한다.', async () => {
+    const TestComponent = () => {
+      const [tableRef, tableValue] = useTableDragSelect(initialValue);
+      return (
+        <div>
+          <table ref={tableRef}>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableValue.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {row.map((col, colIndex) => (
+                    <td key={colIndex}>{col ? 'true' : 'false'}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      );
+    };
+
+    const rendered = render(<TestComponent />);
+
+    expect(rendered.container.querySelectorAll('tbody > tr').length).toBe(initialValue.length);
+
+    expect(rendered.container.querySelectorAll('tbody > tr > td').length).toBe(
+      initialValue.length * initialValue[0].length
+    );
+
+    expect(
+      Array.from(rendered.container.querySelectorAll('tbody > tr')).map(d =>
+        Array.from(d.querySelectorAll('td')).map(d => d.innerHTML)
+      )
+    ).toEqual([
+      ['false', 'false', 'false', 'false', 'false', 'false', 'false'],
+      ['false', 'false', 'false', 'false', 'false', 'false', 'false'],
+      ['false', 'false', 'false', 'false', 'false', 'false', 'false'],
+      ['false', 'false', 'false', 'false', 'false', 'false', 'false'],
+      ['false', 'false', 'false', 'false', 'false', 'false', 'false'],
+      ['false', 'false', 'false', 'false', 'false', 'false', 'false'],
+    ]);
   });
 });
