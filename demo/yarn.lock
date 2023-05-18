@@ -625,7 +625,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.28":
+"@types/react@npm:*, @types/react@npm:^18.0.28, @types/react@npm:^18.2.6":
   version: 18.2.6
   resolution: "@types/react@npm:18.2.6"
   dependencies:
@@ -1153,6 +1153,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     typescript: ^5.0.2
+    use-table-drag-select: ^0.1.12
     vite: ^4.3.2
   languageName: unknown
   linkType: soft
@@ -2786,6 +2787,17 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-table-drag-select@npm:^0.1.12":
+  version: 0.1.12
+  resolution: "use-table-drag-select@npm:0.1.12"
+  dependencies:
+    "@types/react": ^18.2.6
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18
+  checksum: 5030db5d2f68d24b26be61f9179a9cb5ff5d5e8234bacb0fc64214fac55ffad3da0d0ee8e783150939b1b241cbf1164cc25c992c8dac35f2a977f9b23d25186e
   languageName: node
   linkType: hard
 

@@ -1,4 +1,4 @@
-import { useTableDragSelect } from '../../src';
+import { useTableDragSelect } from 'use-table-drag-select';
 import './App.css';
 import { Table } from './Table';
 
