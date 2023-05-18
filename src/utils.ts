@@ -1,4 +1,10 @@
-import { isMouseEvent, isTouchEvent } from './guards';
+export function isMouseEvent(event: Event): event is MouseEvent {
+  return event instanceof MouseEvent;
+}
+
+export function isTouchEvent(event: Event): event is TouchEvent {
+  return 'ontouchstart' in window && event.type.startsWith('touch');
+}
 
 export function convertIndexToString(rowIndex: number, colIndex: number) {
   return `${rowIndex}-${colIndex}`;

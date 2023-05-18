@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { isMouseEvent, isTouchEvent } from './guards';
-import { convertIndexToString, convertStringToIndex, getTableCellIndex } from './utils';
+import { convertIndexToString, convertStringToIndex, getTableCellIndex, isMouseEvent, isTouchEvent } from './utils';
 
 export function useTableDragSelect(initialTable?: boolean[][]): [React.RefObject<HTMLTableElement>, boolean[][]] {
   const startIndex = useRef<string>('');
