@@ -1,1 +1,1 @@
-export { useTableDragSelect } from './use-table-drag-select';
+export { useTableDragSelect } from './useTableDragSelect';
