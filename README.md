@@ -14,6 +14,10 @@ React hook to select table by drag
 npm i use-table-drag-select
 ```
 
+```
+yarn add use-table-drag-select
+```
+
 <br>
 
 ## Usage
