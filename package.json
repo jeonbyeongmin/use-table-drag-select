@@ -1,6 +1,6 @@
 {
   "name": "use-table-drag-select",
-  "version": "0.1.12",
+  "version": "0.2.0",
   "description": "A React hook for selecting table cells by dragging",
   "keywords": [
     "react",
@@ -34,7 +34,8 @@
     "unit": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "yarn typecheck && yarn lint && yarn unit"
+    "test": "yarn typecheck && yarn lint && yarn unit",
+    "sort": "npx sort-package-json"
   },
   "dependencies": {
     "@types/react": "^18.2.6"
@@ -48,6 +49,7 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.5",
+    "@jeonbyeongmin/prettier-config": "^0.1.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-json": "^6.0.0",

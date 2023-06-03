@@ -1511,6 +1511,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jeonbyeongmin/prettier-config@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@jeonbyeongmin/prettier-config@npm:0.1.2"
+  peerDependencies:
+    prettier: "*"
+  checksum: 76d1b828c5b75da6a79fb0b74b374ae8b98b7e36ad3ea2ebdf11fa9a93733e0048e6799f4791c0337afd7e726192a5501cf2715c34fb904f1b774125b7c71212
+  languageName: node
+  linkType: hard
+
 "@jest/console@npm:^29.5.0":
   version: 29.5.0
   resolution: "@jest/console@npm:29.5.0"
@@ -7201,6 +7210,7 @@ __metadata:
     "@babel/preset-env": ^7.21.5
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.21.5
+    "@jeonbyeongmin/prettier-config": ^0.1.2
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^25.0.0
     "@rollup/plugin-json": ^6.0.0
